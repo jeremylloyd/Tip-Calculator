@@ -2,38 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Tip calculator app</title>
+  <title>Tip calculator app</title>
 
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    
-  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono:700">
+  <script src="app.js"></script>
 </head>
 <body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
+  <article class="page">
+    <header class="page__title">
+      <img src="images/logo.svg" alt="logo">
+    </header>
+    <main class="calc">
+      <form class="form">
+        <label for="bill">Bill</label>
+        <div class="form__container">
+          <img src="./images/icon-dollar.svg" alt="" class="form__icon">
+          <input type="number" name="bill" id="bill" class="form__input">
+        </div>
+        <label>Select Tip %</label>
+        <ol class="form__container-grid">
+          <li class="form__button">5%</li>
+          <li class="form__button">10%</li>
+          <li class="form__button">15%</li>
+          <li class="form__button">25%</li>
+          <li class="form__button">50%</li>
+          <li class="form__input form__input--custom"></li>
+        </ol>
+        <div class="form__container">
+          <label for="person-count" class="form__label">Number of People</label>
+          <label for="person-count" class="form__label form__label--error">Can't be zero</label>
+        </div>
+        <div class="form__container">
+          <img src="images/icon-person.svg" alt="" class="form__icon">
+          <input type="number" name="" id="" class="form__input">
+        </div>
+      </form>
+      <section>
+        <div class="card__item">
+          <div class="card__container">
+            <h2 class="card__label">Tip Amount</h2>
+            <subtitle class="card__subtitle">/ person</subtitle>
+          </div>
+          <p class="card__metric">0</p>
+        </div>
+        <div class="card__item">
+          <div class="card__container">
+            <h2 class="card__label">Total</h2>
+            <subtitle class="card__subtitle">/ person</subtitle>
+          </div>
+          <p class="card__metric">0</p>
+        </div>
+        <button class="card__button">Reset</button>
+      </section>
+    </main>
+  </article>
 </body>
 </html>
