@@ -20,6 +20,8 @@ tipButtons.forEach((button) => {
   button.addEventListener("click", () => selectTipButton(button));
   button.addEventListener("click", setTipPercentage);
   button.addEventListener("click", updateCard);
+  button.style.transition =
+    "background-color ease-out 100ms, color ease-out 100ms";
 });
 customInput.addEventListener("input", setTipPercentage);
 customInput.addEventListener("input", updateCard);

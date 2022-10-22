@@ -112,8 +112,7 @@ body {
 	font-size: 1.2rem;
 }
 
-.card__button:hover {
-	cursor: pointer;
+.card__button:active {
 	background-color: var(--cyanlightgrey);
 }
 
@@ -126,6 +125,7 @@ body {
 .card__item {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	margin: 20px 0px;
 }
 
@@ -159,7 +159,7 @@ body {
 	border-radius: 6px;
 }
 
-.form__button:hover {
+.form__button:active {
 	cursor: pointer;
 	background-color: var(--cyanlight);
 	color: var(--cyanverydark);
@@ -201,7 +201,7 @@ body {
 	border-radius: 6px;
 }
 
-.form__input:hover {
+.form__input:active {
 	outline: solid 1px var(--cyanstrong);
 }
 
@@ -253,5 +253,26 @@ body {
 
 	.form__container-grid {
 		grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+	}
+
+	.card__metric {
+		font-size: 3rem;
+	}
+}
+
+@media (hover: hover) {
+	.card__button:hover {
+		cursor: pointer;
+		background-color: var(--cyanlightgrey);
+	}
+
+	.form__button:hover {
+		cursor: pointer;
+		background-color: var(--cyanlight);
+		color: var(--cyanverydark);
+	}
+
+	.form__input:hover {
+		outline: solid 1px var(--cyanstrong);
 	}
 }
