@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono:700">
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
   <article class="page">
@@ -18,10 +18,13 @@
     </header>
     <main class="calc">
       <section class="form">
-        <label>Bill</label>
+        <div class="form__container">
+          <label>Bill</label>
+          <label for="billAmount" id="billAmountError" class="form__label form__label--error"></label>
+        </div>
         <div class="form__container">
           <img src="./images/icon-dollar.svg" alt="" class="form__icon">
-          <input type="number" name="bill" id="bill" class="form__input" min=0 step=0.01>
+          <input type="number" name="bill" class="form__input" id="billAmount" min=0.01 step=0.01>
         </div>
         <label class="form__label form__label--spaced">Select Tip %</label>
         <div class="form__container-grid">
@@ -30,15 +33,15 @@
           <button class="form__button form__button--active">15%</button>
           <button class="form__button">25%</button>
           <button class="form__button">50%</button>
-          <input type="number" name="bill" id="bill" class="form__input form__input--custom" min=0 placeholder="Custom">
+          <input type="number" name="bill" class="form__input form__input--custom" min=0 placeholder="Custom">
         </div>
         <div class="form__container">
           <label class="form__label form__label--spaced">Number of People</label>
-          <label for="person-count" class="form__label form__label--error form__label--spaced"></label>
+          <label for="person-count" id="peopleCountError" class="form__label form__label--error form__label--spaced"></label>
         </div>
         <div class="form__container">
           <img src="images/icon-person.svg" alt="" class="form__icon">
-          <input type="number" name="" id="" class="form__input" min=1>
+          <input type="number" class="form__input" min=1 id="peopleCount">
         </div>
       </section>
       <section class="card">
@@ -47,14 +50,14 @@
             <h2 class="card__label">Tip Amount</h2>
             <subtitle class="card__subtitle">/ person</subtitle>
           </div>
-          <p class="card__metric">$0.00</p>
+          <p class="card__metric" id="tipAmount">$0.00</p>
         </div>
         <div class="card__item">
           <div class="card__container">
             <h2 class="card__label">Total</h2>
             <subtitle class="card__subtitle">/ person</subtitle>
           </div>
-          <p class="card__metric">$0.00</p>
+          <p class="card__metric" id="totalAmount">$0.00</p>
         </div>
         <button class="card__button">Reset</button>
       </section>
