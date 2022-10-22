@@ -5,6 +5,7 @@ const totalAmount = document.querySelector("#totalAmount");
 const billAmount = document.querySelector("#billAmount");
 const peopleCount = document.querySelector("#peopleCount");
 const buttonReset = document.querySelector(".card__button");
+const themePicker = document.querySelector(".theme__picker");
 let tipPercentage = 0.15;
 
 let usdFormatter = Intl.NumberFormat("en", {
@@ -30,6 +31,9 @@ billAmount.addEventListener("input", validateBillAmount);
 peopleCount.addEventListener("input", updateCard);
 peopleCount.addEventListener("input", validatePeopleCount);
 buttonReset.addEventListener("click", reset);
+themePicker.addEventListener("input", () =>
+  document.querySelector(":root").style.setProperty("--hue", themePicker.value)
+);
 
 function selectTipButton(element) {
   tipButtons.forEach((button) =>
