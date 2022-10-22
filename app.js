@@ -26,9 +26,9 @@ tipButtons.forEach((button) => {
 customInput.addEventListener("input", setTipPercentage);
 customInput.addEventListener("input", updateCard);
 billAmount.addEventListener("input", updateCard);
-billAmount.addEventListener("input", validateInput);
+billAmount.addEventListener("input", validateBillAmount);
 peopleCount.addEventListener("input", updateCard);
-peopleCount.addEventListener("input", validateInput);
+peopleCount.addEventListener("input", validatePeopleCount);
 buttonReset.addEventListener("click", reset);
 
 function selectTipButton(element) {
@@ -81,12 +81,30 @@ function inputsAreValid() {
   );
 }
 
-function validateInput() {
-  if (!this.validity.valid || this.value === "") {
-    this.errorLabel.innerHTML = "Must exceed 0";
+function validateBillAmount() {
+  let label;
+  if (this.validity.rangeUnderflow) {
+    label = "Must exceed 0";
+  } else if (this.value === "") {
+    label = "Enter a number";
+  } else if (this.validity.stepMismatch) {
+    label = "Enter dollars & cents";
   } else {
-    this.errorLabel.innerHTML = "";
+    label = "";
   }
+  this.errorLabel.innerHTML = label;
+}
+
+function validatePeopleCount() {
+  let label;
+  if (this.validity.rangeUnderflow) {
+    label = "Must exceed 0";
+  } else if (!this.validity.valid) {
+    label = "Enter an integer";
+  } else {
+    label = "";
+  }
+  this.errorLabel.innerHTML = label;
 }
 
 function reset() {
@@ -95,4 +113,7 @@ function reset() {
   inputs.forEach((elem) => (elem.value = ""));
   labels.forEach((elem) => (elem.innerHTML = ""));
   selectTipButton(tipButtons[2]);
+  document
+    .querySelectorAll(".card__metric")
+    .forEach((elem) => (elem.innerHTML = "$0.00"));
 }
