@@ -31,3 +31,13 @@ Users should be able to:
 
 ### What I learned
 
+- HTML
+  - Number input elements invalidate the selected number if:
+    - A blank value is provided for a `required` input
+    - `stepMismatch`: More decimal places are provided than the `step` attribute allows
+    - `rangeUnderflow`: The number is less than the `min` attribute
+- CSS
+  - Using the `:hover` pseudo-class results in the effect lingering on touch devices. To prevent this lingering, use the `@media (hover: hover)` media query to only apply hover effects when using a hoverable input
+- JS
+  - Remove the need to use `this` in event listener functions by passing the element to the function:
+    ```button.addEventListener("click", () => selectTipButton(button));```
