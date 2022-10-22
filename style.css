@@ -86,7 +86,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	margin: auto;
-	max-width: 800px;
+	max-width: 900px;
 	gap: 20px;
 	padding: 25px;
 	background-color: white;
@@ -215,6 +215,7 @@ body {
 
 .form__input--custom::placeholder{
 	color: var(--cyangrey);
+	font-size: 1.3rem;
 }
 
 .form__label--spaced {
@@ -235,7 +236,7 @@ body {
 	margin: 45px auto;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
 	.calc {
 		display: grid;
 		grid-template: 1fr / repeat(2, 1fr);
@@ -243,10 +244,14 @@ body {
 	}
 	
 	.page {
-		padding-top: calc(max(0px, (100vh - 600px)) / 2);
+		padding-top: calc(max(200px, (100vh - 600px)) / 2);
 	}
 
 	.page__title {
 		margin: 0px auto 80px;
+	}
+
+	.form__container-grid {
+		grid-template: repeat(2, 1fr) / repeat(3, 1fr);
 	}
 }
