@@ -17,44 +17,44 @@
       <img src="images/logo.svg" alt="logo">
     </header>
     <main class="calc">
-      <form class="form">
-        <label for="bill">Bill</label>
+      <section class="form">
+        <label>Bill</label>
         <div class="form__container">
           <img src="./images/icon-dollar.svg" alt="" class="form__icon">
-          <input type="number" name="bill" id="bill" class="form__input">
+          <input type="number" name="bill" id="bill" class="form__input" min=0 step=0.01>
         </div>
-        <label>Select Tip %</label>
-        <ol class="form__container-grid">
-          <li class="form__button">5%</li>
-          <li class="form__button">10%</li>
-          <li class="form__button">15%</li>
-          <li class="form__button">25%</li>
-          <li class="form__button">50%</li>
-          <li class="form__input form__input--custom"></li>
-        </ol>
+        <label class="form__label form__label--spaced">Select Tip %</label>
+        <div class="form__container-grid">
+          <button class="form__button">5%</button>
+          <button class="form__button">10%</button>
+          <button class="form__button form__button--active">15%</button>
+          <button class="form__button">25%</button>
+          <button class="form__button">50%</button>
+          <input type="number" name="bill" id="bill" class="form__input form__input--custom" min=0 placeholder="Custom">
+        </div>
         <div class="form__container">
-          <label for="person-count" class="form__label">Number of People</label>
-          <label for="person-count" class="form__label form__label--error">Can't be zero</label>
+          <label class="form__label form__label--spaced">Number of People</label>
+          <label for="person-count" class="form__label form__label--error form__label--spaced"></label>
         </div>
         <div class="form__container">
           <img src="images/icon-person.svg" alt="" class="form__icon">
-          <input type="number" name="" id="" class="form__input">
+          <input type="number" name="" id="" class="form__input" min=1>
         </div>
-      </form>
-      <section>
+      </section>
+      <section class="card">
         <div class="card__item">
           <div class="card__container">
             <h2 class="card__label">Tip Amount</h2>
             <subtitle class="card__subtitle">/ person</subtitle>
           </div>
-          <p class="card__metric">0</p>
+          <p class="card__metric">$0.00</p>
         </div>
         <div class="card__item">
           <div class="card__container">
             <h2 class="card__label">Total</h2>
             <subtitle class="card__subtitle">/ person</subtitle>
           </div>
-          <p class="card__metric">0</p>
+          <p class="card__metric">$0.00</p>
         </div>
         <button class="card__button">Reset</button>
       </section>
