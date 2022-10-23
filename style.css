@@ -73,6 +73,7 @@ input[type=number] {
 	--grey: hsl(var(--hue), 14%, 56%);
 	--grey-light: hsl(var(--hue), 41%, 84%);
 	--grey-lighter: hsl(var(--hue), 41%, 97%);
+	--bg: hsl(185, 41%, 84%);
 	--redlight: hsl(0, 54%, 65%);
 
 	font-family: 'Space Mono';
@@ -80,7 +81,7 @@ input[type=number] {
 
 body {
 	min-height: 100vh;
-	background-color: var(--grey-light);
+	background-color: var(--bg);
 }
 
 .calc {
@@ -244,22 +245,26 @@ body {
 }
 
 .theme {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	gap: 6px;
 	position: absolute;
 	top: 40px;
 	right: 25px;
-	stroke: var(--grey-dark);
-	background-color: white;
-	padding: 6px;
+	padding: 10px;
 	border-radius: 10px;
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	stroke: rgb(182, 182, 182);
 }
 
 .theme--active {
-	width: 24px;
-	height: 24px;
+	background-image: linear-gradient(
+		to right,
+		var(--grey-lighter) 0%,
+		var(--grey-light) 100%
+	);
+	width: unset;
+	height: unset;
+	box-shadow: 0 0px 8px rgba(87, 87, 87, 0.349);
 }
 
 .theme__item {
@@ -271,6 +276,18 @@ body {
 
 .theme__label {
 	color: var(--grey);
+}
+
+.theme__icon {
+	width: 40px;
+	margin-left: auto;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	padding: 4px;
+}
+
+.theme__icon:active {
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 .theme__picker {
@@ -317,14 +334,6 @@ body {
 	background-color: rgba(221, 221, 221, 0.808);
 	border-radius: 100vmax;
 	cursor: ew-resize;
-}
-
-.page__theme-icon {
-	width: 32px;
-}
-
-.page__theme-icon:active {
-	background-color: black;
 }
 
 @media screen and (min-width: 800px) {

@@ -31,6 +31,11 @@ Users should be able to:
 
 ### What I learned
 
+- Design
+  - Easy ways to make things feel more modern
+    - Box-shadows
+    - Transition time on interactive elements
+    - Gradients
 - HTML
   - Number input elements invalidate the selected number if:
     - A blank value is provided for a `required` input

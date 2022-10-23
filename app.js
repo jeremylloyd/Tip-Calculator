@@ -5,6 +5,8 @@ const totalAmount = document.querySelector("#totalAmount");
 const billAmount = document.querySelector("#billAmount");
 const peopleCount = document.querySelector("#peopleCount");
 const buttonReset = document.querySelector(".card__button");
+const themeMenu = document.querySelector(".theme");
+const themeIcon = document.querySelector(".theme__icon");
 const themePicker = document.querySelector(".theme__picker");
 let tipPercentage = 0.15;
 
@@ -34,6 +36,15 @@ buttonReset.addEventListener("click", reset);
 themePicker.addEventListener("input", () =>
   document.querySelector(":root").style.setProperty("--hue", themePicker.value)
 );
+themeIcon.addEventListener("click", () =>
+  themeMenu.classList.toggle("theme--active")
+);
+
+// Hide open dropdowns on click
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".theme") === null)
+    themeMenu.classList.remove("theme--active");
+});
 
 function selectTipButton(element) {
   tipButtons.forEach((button) =>
